@@ -91,7 +91,7 @@ function Adopt() {
 export default Adopt;
 
 const AdoptContainer=styled.div`
-height:89vh;
+height:88vh;
 
   .card2{
     margin-left:149px;

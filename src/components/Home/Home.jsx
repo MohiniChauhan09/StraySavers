@@ -1,17 +1,35 @@
 import React from 'react'
 import styled from 'styled-components'
+import Chatbot from '../ChatBot/ChatBot.jsx'
+import { useState } from 'react'
+import { HiChatBubbleOvalLeftEllipsis } from "react-icons/hi2";
+
+
 
 function Home() {
+  const [showChat,setShowChat] = useState(false);
   return (
-    <HomeContainer>
+    <>    
+      <HomeContainer>
         <div className='container'>
-            <img src="/images/dog.jpeg" alt="" className='bg'/>
-            <div className="text">
-              <p>Welcome to StraySavers</p>
-              <p className='slogan'>where every dog finds a home!</p>
-            </div>
+          <img src="/images/dog.jpeg" alt="" className='bg'/>
+          <div className="text">
+            <p>Welcome to StraySavers</p>
+            <p className='slogan'>where every dog finds a home!</p>
+          </div>
+          <button className='chat-btn'
+          onClick={ ()=> { setShowChat( (prev) => !prev ) }} >
+          { showChat ? "End chat!     " : "Chat with us!     " }<HiChatBubbleOvalLeftEllipsis /></button>
+
+
+          {     showChat   &&   <div className='chat-bot'><Chatbot/></div>     }
         </div>
-    </HomeContainer>
+
+      
+      </HomeContainer>
+
+    </>
+
   )
 }
 
@@ -54,5 +72,38 @@ height:88vh;
     color:#35374B;
     text-shadow: 2px 2px 8px #526D82;
     font-family: 'Trebuchet MS', sans-serif;
+  }
+
+  .chat-bot{
+    position:absolute;
+    top:50px;
+    left:77%;
+  }
+
+  .chat-btn{
+    position:absolute;
+    width:180px;
+    height:60px;
+    top:85%;
+    left:82%;
+    font-family: 'Trebuchet MS', sans-serif;
+    padding:10px 10px;
+    color:#070F2B;
+    font-weight:bold;
+    font-size:18px;
+    border-radius:12px;
+    border:none;
+    transition: 1s ease-out 100ms;
+    &:hover{
+      transform: translateY(-20px);
+      color: black;
+      background-color:#90cfe7;
+      cursor:pointer;
+  }
+
+  .chat-icon{
+    position:absolute;
+    top:85%;
+    left:90%;
   }
 `

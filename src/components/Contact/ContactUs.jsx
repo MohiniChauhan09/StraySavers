@@ -103,11 +103,12 @@ const Container=styled.div`
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-top:60px;
+    margin-top:47px;
   }
 
   form{
     display:flex;
+    height:76%;
     flex-direction:column;
     gap:1rem;
   }

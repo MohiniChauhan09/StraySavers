@@ -28,7 +28,7 @@ export default Programs
 
 const ProgramContainer=styled.div`
   height:81vh;
-
+  width:100vw;
   .topic{
     padding:40px 100px;
     margin-left:385px;
